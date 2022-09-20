@@ -1,7 +1,17 @@
+.favorite-color {
+  width: 20em;
+}
+
 .favorite-color__button {
   font-size: 1em;
   margin: 0.5em;
   padding: 0 1.5em;
+}
+
+.favorite-color__box {
+  width: 10em;
+  margin: 0 auto 1em auto;
+  padding: 1em;
 }
 
 .blue {

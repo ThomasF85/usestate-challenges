@@ -1,9 +1,10 @@
 import "./FavoriteColor.css";
 
-function FavoriteColor() {
+function FavoriteColor({ name }) {
   return (
-    <main>
-      <h2 className="blue">My favorite color is: </h2>
+    <div className="favorite-color">
+      <h2>{name}'s favorite color is: </h2>
+      <div className="favorite-color__box blue">blue</div>
       <button className="favorite-color__button" type="button">
         blue
       </button>
@@ -13,7 +14,7 @@ function FavoriteColor() {
       <button className="favorite-color__button" type="button">
         green
       </button>
-    </main>
+    </div>
   );
 }
 
