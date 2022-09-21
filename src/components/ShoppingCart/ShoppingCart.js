@@ -4,17 +4,17 @@ import "./ShoppingCart.css";
 
 const items = [
   {
-    id: "87c87fa",
+    id: "87c87fae",
     name: "Banana",
     price: 0.6,
   },
   {
-    id: "87c87fa",
+    id: "b7fae3a9",
     name: "Olive oil",
     price: 9.5,
   },
   {
-    id: "87c87fa",
+    id: "7fa8dd21",
     name: "Mountain Bike",
     price: 990,
   },
@@ -36,6 +36,7 @@ function ShoppingCart() {
         <h1>Shopping Cart</h1>
       </header>
       <main>
+        <p className="cart__sum">SUM: ??</p>
         <section className="cart__items">
           {items.map((item) => (
             <ShoppingItem key={item.id} name={item.name} price={item.price} />
@@ -45,7 +46,7 @@ function ShoppingCart() {
           <label htmlFor="item">New Shopping item:</label>
           <input type="text" name="item" id="item" />
           <label htmlFor="price">price:</label>
-          <input type="number" name="price" id="price" />
+          <input type="number" step=".1" name="price" id="price" />
           <button className="form__submit-button" type="submit">
             Submit
           </button>
