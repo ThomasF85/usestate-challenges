@@ -9,7 +9,7 @@ function App() {
     <div className="App">
       {/* <ColorPage /> */}
       {/* <Hungry /> */}
-      {/* <ActiveToggle /> */}
+      <ActiveToggle />
       <ShoppingCart />
     </div>
   );
