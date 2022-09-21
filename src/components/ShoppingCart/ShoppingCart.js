@@ -1,5 +1,24 @@
+import { useState } from "react";
 import ShoppingItem from "../ShoppingItem/ShoppingItem";
 import "./ShoppingCart.css";
+
+const items = [
+  {
+    id: "87c87fa",
+    name: "Banana",
+    price: 0.6,
+  },
+  {
+    id: "87c87fa",
+    name: "Olive oil",
+    price: 9.5,
+  },
+  {
+    id: "87c87fa",
+    name: "Mountain Bike",
+    price: 990,
+  },
+];
 
 function ShoppingCart() {
   function sendForm(event) {
@@ -18,9 +37,9 @@ function ShoppingCart() {
       </header>
       <main>
         <section className="cart__items">
-          <ShoppingItem name="Banana" price={0.6} />
-          <ShoppingItem name="Olive oil" price={9.5} />
-          <ShoppingItem name="Mountain Bike" price={990} />
+          {items.map((item) => (
+            <ShoppingItem key={item.id} name={item.name} price={item.price} />
+          ))}
         </section>
         <form className="form" onSubmit={sendForm}>
           <label htmlFor="item">New Shopping item:</label>
