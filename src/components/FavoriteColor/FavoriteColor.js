@@ -2,7 +2,7 @@ import "./FavoriteColor.css";
 
 function FavoriteColor({ name }) {
   return (
-    <div className="favorite-color">
+    <section className="favorite-color">
       <h2>{name}'s favorite color is: </h2>
       <div className="favorite-color__box blue">blue</div>
       <button className="favorite-color__button" type="button">
@@ -14,7 +14,7 @@ function FavoriteColor({ name }) {
       <button className="favorite-color__button" type="button">
         green
       </button>
-    </div>
+    </section>
   );
 }
 
