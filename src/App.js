@@ -7,10 +7,10 @@ import ShoppingCart from "./components/ShoppingCart/ShoppingCart";
 function App() {
   return (
     <div className="App">
-      <ColorPage />
+      {/* <ColorPage /> */}
       {/* <Hungry /> */}
       {/* <ActiveToggle /> */}
-      {/* <ShoppingCart /> */}
+      <ShoppingCart />
     </div>
   );
 }
