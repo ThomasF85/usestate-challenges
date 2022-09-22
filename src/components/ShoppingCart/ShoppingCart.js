@@ -32,7 +32,16 @@ function ShoppingCart() {
     const formData = new FormData(event.target);
     const { item, price } = Object.fromEntries(formData);
 
-    alert(`Add an ${item} for the price of ${price}`);
+    const newItems = [
+      ...items,
+      {
+        id: Math.random().toString(36).substring(2),
+        name: item,
+        price: price,
+        amount: 0,
+      },
+    ];
+    setItems(newItems);
   }
 
   function increaseItemAmount(id) {
