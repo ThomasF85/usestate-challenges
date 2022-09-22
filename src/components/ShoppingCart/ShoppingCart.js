@@ -53,13 +53,17 @@ function ShoppingCart() {
     );
   }
 
+  const sum = items
+    .map((item) => item.amount * item.price)
+    .reduce((a, b) => a + b, 0);
+
   return (
     <>
       <header>
         <h1>Shopping Cart</h1>
       </header>
       <main>
-        <p className="cart__sum">SUM: ??</p>
+        <p className="cart__sum">SUM: {sum}</p>
         <section className="cart__items">
           {items.map((item) => (
             <ShoppingItem
