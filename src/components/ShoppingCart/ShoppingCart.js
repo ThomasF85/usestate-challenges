@@ -2,25 +2,30 @@ import { useState } from "react";
 import ShoppingItem from "../ShoppingItem/ShoppingItem";
 import "./ShoppingCart.css";
 
-const items = [
+const initialItems = [
   {
     id: "87c87fae",
     name: "Banana",
     price: 0.6,
+    amount: 0,
   },
   {
     id: "b7fae3a9",
     name: "Olive oil",
     price: 9.5,
+    amount: 0,
   },
   {
     id: "7fa8dd21",
     name: "Mountain Bike",
     price: 990,
+    amount: 0,
   },
 ];
 
 function ShoppingCart() {
+  const [items, setItems] = useState(initialItems);
+
   function sendForm(event) {
     event.preventDefault();
 
@@ -39,7 +44,12 @@ function ShoppingCart() {
         <p className="cart__sum">SUM: ??</p>
         <section className="cart__items">
           {items.map((item) => (
-            <ShoppingItem key={item.id} name={item.name} price={item.price} />
+            <ShoppingItem
+              key={item.id}
+              name={item.name}
+              price={item.price}
+              amount={item.amount}
+            />
           ))}
         </section>
         <form className="form" onSubmit={sendForm}>
