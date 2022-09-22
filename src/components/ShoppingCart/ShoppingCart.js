@@ -35,6 +35,14 @@ function ShoppingCart() {
     alert(`Add an ${item} for the price of ${price}`);
   }
 
+  function increaseItemAmount(id) {
+    setItems(
+      items.map((item) =>
+        item.id === id ? { ...item, amount: item.amount + 1 } : item
+      )
+    );
+  }
+
   return (
     <>
       <header>
@@ -49,6 +57,7 @@ function ShoppingCart() {
               name={item.name}
               price={item.price}
               amount={item.amount}
+              onIncrease={() => increaseItemAmount(item.id)}
             />
           ))}
         </section>

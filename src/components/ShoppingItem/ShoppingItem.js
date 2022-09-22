@@ -1,6 +1,6 @@
 import "./ShoppingItem.css";
 
-function ShoppingItem({ name, price, amount }) {
+function ShoppingItem({ name, price, amount, onIncrease }) {
   return (
     <section className="item">
       <h2>{name}</h2>
@@ -10,7 +10,7 @@ function ShoppingItem({ name, price, amount }) {
       <button className="item__button" type="button">
         -
       </button>
-      <button className="item__button" type="button">
+      <button onClick={onIncrease} className="item__button" type="button">
         +
       </button>
     </section>
