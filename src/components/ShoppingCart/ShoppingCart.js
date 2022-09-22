@@ -43,6 +43,16 @@ function ShoppingCart() {
     );
   }
 
+  function decreaseItemAmount(id) {
+    setItems(
+      items.map((item) =>
+        item.id === id && item.amount > 0
+          ? { ...item, amount: item.amount - 1 }
+          : item
+      )
+    );
+  }
+
   return (
     <>
       <header>
@@ -58,6 +68,7 @@ function ShoppingCart() {
               price={item.price}
               amount={item.amount}
               onIncrease={() => increaseItemAmount(item.id)}
+              onDecrease={() => decreaseItemAmount(item.id)}
             />
           ))}
         </section>
